@@ -4,9 +4,11 @@
 
 학습이 완료된 항목은 체크박스로 표시됩니다.
 
-- [ ] Code Structure
-- [ ] Variables
-- [ ] Srtict Mode
+- [x] Code Structure
+- [x] Variables
+- [x] Srtict Mode
+- [x] Global This
+- [x] Data Types
 
 <!-- - [ ] 체크박스
 - [x] 체크박스 -->
