@@ -22,17 +22,27 @@ console.log(message);
 //       Yes | No
 
 // 영화 봤니?
-let didWatchMovie;
+let didWatchMovie = "yes";
 
 // 영화 볼거니?
-let goingToWatchMovie;
+let goingToWatchMovie = "no";
 
-// if 문(statement)
-
-// else 절(caluse)
-
-// else if 복수 조건 처리
+if (didWatchMovie.includes("yes")) {
+  // if 문(statement)
+  alert("그 영화 재밌더라");
+} else if (goingToWatchMovie === "yes") {
+  // else if 복수 조건 처리
+  alert("나랑 같이 보자");
+} else {
+  // else 절(caluse)
+  alert("음.. 난 안볼라고");
+}
 
 // 조건부 연산자
+let movieMessage = didWatchMovie.includes("yes")
+  ? "그 영화 재밌더라"
+  : goingToWatchMovie === "yes"
+  ? "나랑 같이 보자"
+  : "음.. 난 안볼라고";
 
 // 멀티 조건부 연산자 식
