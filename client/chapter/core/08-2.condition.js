@@ -42,15 +42,17 @@ let pw;
 //   prompt("취소되었습니다.");
 // }
 
-if (userName === "Admin") {
+// 대소문자 상관없이 입력받는 방법
+
+if (userName?.toLowerCase() === "admin") {
   pw = prompt("비밀번호를 입력해주세요", "");
-  if (pw === "TheMaster") {
-    prompt("환영합니다!");
+  if (pw?.toUpperCase() === "THEMASTER") {
+    console.log("환영합니다!");
   } else {
-    prompt("취소되었습니다.");
+    console.log("취소되었습니다.");
   }
 } else if (userName === "" || userName === null) {
-  prompt("취소되었습니다.");
+  console.log("취소되었습니다.");
 } else {
-  prompt("인증되지 않은 사용자입니다.");
+  console.log("인증되지 않은 사용자입니다.");
 }
