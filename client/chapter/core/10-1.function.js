@@ -63,7 +63,32 @@ console.log(result);
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
 // rem(pxValue: number|string, base: number):string;
-let rem;
+function rem(pxValue, base = 16) {
+  typeof pxValue === "string" && (pxValue = parseInt(pxValue, 10));
+  // if(typeof pxValue==='string'){
+  //   pxValue = parseInt(pxValue,10)
+  // }
+
+  typeof base === "string" && (base = parseInt(base, 10));
+  // if(typeof base==='string'){
+  //   pxValue = parseInt(base,10)
+  // }
+
+  return `${pxValue / base}rem`;
+}
+
+// * 함수 원리 설명
+/*
+1. function name
+2. validation
+3. return value
+4. parameter, argument
+5. test [Test Driven Development]
+*/
+
+console.assert(rem(20) === "1.25rem");
+console.assert(rem("30px") === "1.875rem");
+console.assert(rem("56px", 10) === "5.6rem");
 
 // rem()
 
