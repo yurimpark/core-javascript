@@ -52,7 +52,7 @@ const languages = [
 ];
 
 // for ~ of 문
-// - 특정 조건에서 건너띄기
+// - 특정 조건에서 건너뛰기
 
 for (let value of languages) {
   // console.table(value.name);
