@@ -2,6 +2,21 @@
 /* Functions → Declaration                                                */
 /* ---------------------------------------------------------------------- */
 
+/* 
+문: 값을 반환 x / 식: 값을 반환 o
+
+if 문 if ... { // scope }
+for 문 for ... {}
+while 문 while ... {}
+dowhile 문 do 
+
+함수선언 문
+
+let result = condition ? value1 : value2
+let result = value1 || value2
+let result = value1 && value2
+ */
+
 // console.log('총 합 = ', 10000 + 8900 + 1360 + 2100);
 // console.log('총 합 = ', 21500 + 3200 + 9800 + 4700);
 // console.log('총 합 = ', 3800 + 15200 - 500 + 80200);
