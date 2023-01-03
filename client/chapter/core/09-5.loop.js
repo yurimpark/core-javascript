@@ -21,7 +21,7 @@ let str = "유사배열";
 // console.log(str);
 
 for (let value of str) {
-  console.log(value);
+  // console.log(value);
 }
 
 const languages = [
@@ -68,7 +68,7 @@ for (let value of languages) {
   let name = value.name;
   if (name.includes("C#")) break;
 
-  console.table(value);
+  // console.table(value);
 }
 
 // - 특정 조건에서 중단하기
@@ -117,9 +117,67 @@ const randomUser = {
 // - 성능 비교 진단
 
 /* 
+for(let key in randomUser){
 
-  Object.entries
-  Object.keys
-  Object.values
+  let L1 = randomUser[key];
+  
+  if(({}).hasOwnProperty.call(randomUser,key)){
+    console.log('L1 : ' ,key);
+
+    if(typeof L1 === 'object'){
+
+      for(let key in L1){
+
+        let L2 = L1[key];
+        if(({}).hasOwnProperty.call(randomUser,key)){
+
+          console.log('\t L2 : ' ,key);
+
+          if(typeof L2 === 'object'){
+            
+          }
+        }
+      }
+    }
+
+  }
+  
+}
+ */
+
+/* 
+
+Object.keys
+Object.values
+Object.entries
 
  */
+
+// console.log(Object.values(randomUser));
+/* 
+
+for(let key of Object.keys(randomUser)){
+  console.log(key);
+}
+
+for(let values of Object.values(randomUser)){
+  console.log(values);
+}
+
+ */
+
+for (let keyValue of Object.entries(randomUser)) {
+  let key = keyValue[0];
+  let value = keyValue[1];
+
+  console.log("L1 : ", key);
+
+  if (typeof value === "object") {
+    for (let keyValue of Object.entries(value)) {
+      let key = keyValue[0];
+      let value = keyValue[1];
+
+      console.log("\t L2 : ", key);
+    }
+  }
+}
