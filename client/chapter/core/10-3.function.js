@@ -78,12 +78,36 @@ console.log(user.totalGrades());
 
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
-// pow(numeric: number, powerCount: number): number;
-let pow;
+// TODO pow(numeric: number, powerCount: number): number;
+let pow = (num, powerCount) => {
+  let result = 1;
+  for (let i = 0; i < powerCount; i++) {
+    result *= num;
+  }
+  return result;
+};
 
-pow(2, 53); // 9007199254740992
+let powExpression = (num, powerCount) =>
+  Array(powerCount)
+    .fill(null)
+    .reduce((acc) => acc * num, 1); // 1 초기값 설정
 
-// repeat(text: string, repeatCount: number): string;
-let repeat;
+console.log(pow(2, 53)); // 9007199254740992
+console.log(powExpression(2, 53)); // 9007199254740992
 
-repeat("hello😘", 3); // 'hello😘hello😘hello😘'
+// TODO repeat(text: string, repeatCount: number): string;
+let repeat = (text, repeatCount) => {
+  let result = "";
+  for (let i = 0; i < repeatCount; i++) {
+    result += text;
+  }
+  return result;
+};
+
+let repeatExpression = (text, repeatCount) =>
+  Array(repeatCount)
+    .fill(null)
+    .reduce((acc) => acc + text, ""); // "" 초기값 설정
+
+console.log(repeat("hello😘", 3)); // 'hello😘hello😘hello😘'
+console.log(repeatExpression("hello😘", 3)); // 'hello😘hello😘hello😘'
