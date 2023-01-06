@@ -35,8 +35,16 @@ console.log(portableFan?.photos?.animate);
 
 // 타이머
 setTimeout(() => {
-  console.log("안녕~~~~~~~~~~~~~");
-}, 1000); // ms
+  const button = /* html */ `
+    <button type="button">click me!</button>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend", button);
+}, 3000); // ms
+
+document.querySelector("button")?.addEventListener("click", function () {
+  console.log("hit");
+});
 
 // 반복 타이머
 // setInterval(() => {

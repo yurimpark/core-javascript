@@ -9,6 +9,7 @@ let riches = 100000000;
 // 1,000 단위 구분하듯 사용할 수 있을까요?
 riches = 100_000_000;
 
+// exponential
 // 숫자 옆에 `e`를 붙여 0의 갯수를 설정할 수 있습니다.
 riches = 1e8;
 
@@ -25,42 +26,45 @@ let number = 90_127.53100032;
 
 // 내림
 let floor = Math.floor(number);
-console.log("floor: ", floor);
+console.log("floor : ", floor);
 
 // 반올림
 let round = Math.round(number);
-console.log("round: ", round);
+console.log("round : ", round);
 
 // 올림
 let ceil = Math.ceil(number);
-console.log("ceil: ", ceil);
+console.log("ceil : ", ceil);
 
 // 절삭(소수점 이하)
 let truncate = Math.trunc(number);
-console.log("truncate: ", truncate);
+console.log("truncate : ", truncate);
 
 // 난수
 let random = Math.random();
-console.log("random: ", random);
+console.log("random : ", random);
 
 // 여러 수 중, 최댓값
-let max = Math.max(10, 30, 300, 4000);
-console.log("max: ", max);
+let max = Math.max(100, 30, 300, 4000);
+console.log("max : ", max);
 
+let arr = [10, 40, 50, 100];
 // 여러 수 중, 최솟값
 let min = Math.min(10, 30);
-console.log("min: ", min);
+console.log("min : ", min);
 
 // 거듭제곱
-let pow = Math.pow(2, 3);
-console.log("pow: ", pow);
+// 2**53
+let pow = Math.pow(2, 53);
+console.log("pow : ", pow);
 
 // 최소, 최대 값 사이 난수 반환 함수
 let getRandomMinMax = (min, max) => {
-  if (min > max) throw new Error("최소값은 최대값보다 작아야 합니다.");
+  if (min > max) throw new Error("최솟값은 최댓값보다 작아야 합니다.");
   return Math.round(Math.random() * (max - min) + min);
 };
-console.log("getRandomMinMax: ", getRandomMinMax(3, 10));
+
+console.log(getRandomMinMax(3, 10));
 
 /* 진법 ------------------------------------------------------------------ */
 
