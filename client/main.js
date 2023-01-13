@@ -6,7 +6,8 @@
 
 /* defer를 넣어줘서 읽을 수 있게 해준다. */
 
-/* eslint no-undef: 'off' */
+/* eslint no-undef:'warn' */
+/* eslint no-unused-vars: 'off' */
 
 /* const firstInput = getNode("#firstNumber");
 const secondInput = getNode("#secondNumber");
@@ -32,14 +33,20 @@ done.addEventListener("click", handler);
 const firstInput = getNode("#firstNumber");
 const secondInput = getNode("#secondNumber");
 const done = getNode("#done");
+const result = getNode(".result");
 
 function getInputValue(node) {
   if (typeof node === "string") node = getNode(node);
-  if (node.tagName !== "INPUT") refError("어쩌구 저쩌구");
+  if (node.tagName !== "INPUT")
+    refError("getInputValue 함수는 INPUT ELEMENT만 허용합니다.");
   return node.value;
 }
 
-const sum = (valueA, valueB) => valueA + valueB;
+// const sum = (valueA,valueB) => valueA + valueB;
+
+function sum(valueA, valueB) {
+  return valueA + valueB;
+}
 
 function clearContents(node) {
   if (typeof node === "string") node = getNode(node);
@@ -48,15 +55,27 @@ function clearContents(node) {
 
 function handler(e) {
   e.preventDefault();
+
   let firstValue = +getInputValue(firstInput);
   let secondValue = +getInputValue(secondInput);
   let total = sum(firstValue, secondValue);
 
-  console.log(total);
+  clearContents(result);
 
-  clearContents(".result");
+  insertLast(result, total);
+}
 
-  insertLast(".result", total);
+function inputHandler() {
+  let firstValue = +getInputValue(firstInput);
+  let secondValue = +getInputValue(secondInput);
+  let total = sum(firstValue, secondValue);
+
+  clearContents(result);
+
+  insertLast(result, total);
 }
 
 done.addEventListener("click", handler);
+
+firstInput.addEventListener("change", inputHandler);
+secondInput.addEventListener("change", inputHandler);
