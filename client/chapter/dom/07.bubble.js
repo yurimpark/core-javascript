@@ -24,16 +24,13 @@ getNode(".pop").addEventListener("click", (e) => {
   css(".pop", "display", "none");
 });
 
-/* 
-news.addEventListener('click',function(){
-    console.log('%c news','background:orange');
-})
+news.addEventListener("click", function () {
+  console.log("%c news", "background:orange");
+});
 
-desc.addEventListener('click',function(e){
-    e.stopPropagation()
-    console.log('%c desc','background:hotpink');
-})
-
- */
+desc.addEventListener("click", function (e) {
+  e.stopPropagation();
+  console.log("%c desc", "background:hotpink");
+});
 
 /* 캡처링 ----------------------------------------------------------------- */
