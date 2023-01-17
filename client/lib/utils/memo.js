@@ -1,4 +1,4 @@
-const memo = (() => {
+export const memo = (() => {
   const cache = {};
   return (key, callback) => {
     if (!callback) return cache[key];

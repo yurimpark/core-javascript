@@ -101,7 +101,7 @@ function renderRecordListItem() {
 /* event
 /* -------------------------------------------------------------------------- */
 
-//IIFE
+//IIFE (즉시실행함수)
 
 const handleRollingDice = (() => {
   let isRolling = false;
